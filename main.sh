@@ -1,6 +1,5 @@
 #!/bin/bash
-
-function Usage {
+function Usage(){
 	echo "Usage: Main.sh [-c d] [-d DEPLOY_DIR]" >&2
 	echo "				 [-t TERMINAL_TYPE] [-p PRE_COMMAND]"
 	echo "               [-h]" >&2
@@ -10,10 +9,11 @@ function Usage {
 	echo "      -h 				print this Usage" >&2
 	exit 1
 }
+ 
 
 # 定义常用命令或者变量(必须大写)
-CONF_FILE = ""
-DEPLOY_DIR = "/opt/huawei"
+CONF_FILE="1" 
+DEPLOY_DIR="/opt/huawei"
 PRE_COMMAND=""
 APP_NAME="HASwitch"
 EXEC_COMMAND=""
@@ -29,7 +29,7 @@ while getopts ":c:d:h" opt; do
 			DEPLOY_DIR=${OPTARG};;
 		p)
 			PRE_COMMAND=${OPTARG};;
-		h）
+		h)
 			Usage;;  
 		\?)
 			echo "Invalid option -${OPTARG}" >&2
@@ -38,10 +38,10 @@ while getopts ":c:d:h" opt; do
 done
 
 # 编写业务函数
-function main_command{
-
-
+function main_command(){
+	echo "main_command"
 }
+
 
 
 # 命令执行前的准备
@@ -52,8 +52,12 @@ function main_command{
 ### 系统命令 
 ${PRE_COMMAND}
 
+echo "hello"
+
 
 ## 业务模块
+
+
 
 
 
