@@ -54,9 +54,8 @@ ${PRE_COMMAND}
 
 echo "hello"
 
-
+echo "new line"
 ## 业务模块
-
 
 
 
